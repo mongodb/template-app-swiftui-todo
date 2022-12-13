@@ -5,6 +5,6 @@
 	<key>baseUrl</key>
 	<string>https://realm.mongodb.com</string>
 	<key>appId</key>
-	<string>todo-sync-pcmwt</string>
+	<string>PUT YOUR APP ID HERE</string>
 </dict>
 </plist>
