@@ -7,17 +7,13 @@ struct CreateItemView: View {
     // The ``items`` ObservedResults collection is the
     // entire list of Item objects in the realm.
     @ObservedResults(Item.self) var items
-    
     // Create a new Realm Item object.
     @State private var newItem = Item()
-    
     // We've passed in the ``creatingNewItem`` variable
     // from the ItemsView to know when the user is done
     // with the new Item and we should return to the ItemsView.
     @Binding var isInCreateItemView: Bool
-    
     @State var user: User
-    
     @State var itemSummary = ""
 
     var body: some View {
@@ -40,7 +36,6 @@ struct CreateItemView: View {
                     // ObservedResults collection adds it to the
                     // realm in an implicit write.
                     $items.append(newItem)
-                    
                     // Now we're done with this view, so set the
                     // ``isInCreateItemView`` variable to false to
                     // return to the ItemsView.

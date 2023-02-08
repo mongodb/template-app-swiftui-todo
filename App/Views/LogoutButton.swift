@@ -12,7 +12,7 @@ struct LogoutButton: View {
             ProgressView()
         }
         Button("Log Out") {
-            guard let user = realmApp.currentUser else {
+            guard let user = app.currentUser else {
                 return
             }
             isLoggingOut = true
@@ -22,7 +22,7 @@ struct LogoutButton: View {
                 // that the currentUser has changed. Nothing more to do here.
                 isLoggingOut = false
             }
-        }.disabled(realmApp.currentUser == nil || isLoggingOut)
+        }.disabled(app.currentUser == nil || isLoggingOut)
         // Show an alert if there is an error during logout
         .alert(item: $errorMessage) { errorMessage in
             Alert(

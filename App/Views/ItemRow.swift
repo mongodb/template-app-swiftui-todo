@@ -13,6 +13,9 @@ struct ItemRow: View {
                     .foregroundColor(.blue)
                     .padding(.trailing, 10)
             }
+            if item.owner_id == app.currentUser?.id {
+                Text("(mine)")
+            }
         }
     }
 }

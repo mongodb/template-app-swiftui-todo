@@ -13,11 +13,12 @@ struct ItemList: View {
             List {
                 ForEach(items) { item in
                     ItemRow(item: item)
-                }.onDelete(perform: $items.remove)
+                }
+                .onDelete(perform: $items.remove)
             }
             .listStyle(InsetListStyle())
             Spacer()
-            Text("Log in with the same account on another device or simulator to see your list sync in real-time")
+            Text("Log in or create a different account on another device or simulator to see your list sync in real time")
                 .frame(maxWidth: 300, alignment: .center)
         }
         .navigationBarTitle("Items", displayMode: .inline)
