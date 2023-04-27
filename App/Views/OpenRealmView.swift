@@ -1,9 +1,9 @@
 import SwiftUI
 import RealmSwift
 
-/// Called when login completes. Opens the realm asynchronously and navigates to the Items screen.
+/// Called when login completes. Opens the realm and navigates to the Items screen.
 struct OpenRealmView: View {
-    @AsyncOpen(appId: theAppConfig.appId, timeout: 2000) var asyncOpen
+    @AutoOpen(appId: theAppConfig.appId, timeout: 2000) var autoOpen
     // We must pass the user, so we can set the user.id when we create Item objects
     @State var user: User
     @State var showMyItems = true
@@ -12,9 +12,9 @@ struct OpenRealmView: View {
     @Environment(\.realmConfiguration) private var config
 
     var body: some View {
-        switch asyncOpen {
+        switch autoOpen {
         case .connecting:
-            // Starting the Realm.asyncOpen process.
+            // Starting the Realm.autoOpen process.
             // Show a progress view.
             ProgressView()
         case .waitingForUser:
