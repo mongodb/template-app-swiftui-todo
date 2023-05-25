@@ -6,7 +6,7 @@ struct ItemList: View {
     // ObservedResults is a collection of all Item objects in the realm.
     // Deleting objects from the observed collection
     // deletes them from the realm.
-    @ObservedResults(Item.self) var items
+    @ObservedResults(Item.self, sortDescriptor: SortDescriptor(keyPath: "_id", ascending: true)) var items
     
     var body: some View {
         VStack {
