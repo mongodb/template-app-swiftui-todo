@@ -20,6 +20,13 @@ struct ItemList: View {
             Spacer()
             Text("Log in or create a different account on another device or simulator to see your list sync in real time")
                 .frame(maxWidth: 300, alignment: .center)
+            Spacer()
+            if let atlasUrl = atlasUrl {
+                Link("Tap here to view your data in Atlas.", destination: URL(string: atlasUrl)!)
+                    .font(.body)
+                    .frame(maxWidth: 300, alignment: .center)
+                    .foregroundColor(Color.blue)
+            }
         }
         .navigationBarTitle("Items", displayMode: .inline)
     }

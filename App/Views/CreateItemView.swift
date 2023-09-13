@@ -40,6 +40,11 @@ struct CreateItemView: View {
                     // ``isInCreateItemView`` variable to false to
                     // return to the ItemsView.
                     isInCreateItemView = false
+                    
+                    if let atlasUrl = atlasUrl {
+                        print("To see your new item in Atlas, go to this link: " + atlasUrl)
+                    }
+                    
                 }) {
                     HStack {
                         Spacer()

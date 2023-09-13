@@ -7,6 +7,8 @@ import RealmSwift
 /// to store and access app configuration details.
 let theAppConfig = loadAppConfig()
 
+let atlasUrl = theAppConfig.atlasUrl
+
 let app = App(id: theAppConfig.appId, configuration: AppConfiguration(baseURL: theAppConfig.baseUrl, transport: nil, localAppName: nil, localAppVersion: nil))
 
 @main
@@ -21,6 +23,11 @@ struct realmSwiftUIApp: SwiftUI.App {
                     Button("OK", role: .cancel) { errorHandler.error = nil }
                 } message: {
                     Text(errorHandler.error?.localizedDescription ?? "")
+                }
+                .onAppear {
+                    if let atlasUrl = atlasUrl {
+                        print("To view your data in Atlas, go to this link: " + atlasUrl)
+                    }
                 }
         }
     }
