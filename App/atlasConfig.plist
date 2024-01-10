@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>baseUrl</key>
-	<string>https://realm.mongodb.com</string>
+	<string>https://services.cloud.mongodb.com</string>
 	<key>appId</key>
 	<string>PUT YOUR APP ID HERE</string>
 </dict>
